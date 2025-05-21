@@ -60,7 +60,9 @@ nav {
   display: block;
   transform: translateX(-300px);
 }
-
+#navBtn {
+  display: none;
+}
 .open {
   cursor: pointer;
   position: absolute;
@@ -124,7 +126,11 @@ nav ul {
   padding-bottom: 1rem;
   text-align: center;
 }
-
+#navBtn:checked + .open span,
+#navBtn:checked + .open::before,
+#navBtn:checked + .open::after {
+  border-bottom-color: #EEE;
+}
 nav ul li {
  /* display: inline-block;*/
   margin: 0 10px;
@@ -211,6 +217,7 @@ footer {
 @media all and (min-width: 1025px) {
   header h1 {
     font-size: 4rem;
+  }
     nav {
       display: block;
       height: auto;
@@ -222,13 +229,15 @@ footer {
     nav ul li {
       display: inline-block;
     }
-    
+    nav ul li a {
+      color: #333;
+    }
     #navBtn,
     .open {
       display: none;
     }
   
-  }
+  
   main {
     grid-template-columns: 1fr 1fr;
   }
